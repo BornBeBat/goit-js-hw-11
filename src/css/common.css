@@ -1,0 +1,125 @@
+:root {
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+}
+
+* {
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  height: auto;
+  width: 45%;
+}
+body {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+}
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+option {
+  display: block;
+  margin-top: 10px;
+}
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.breed-select {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, rgba(0, 255, 255, 0.367) 3em, rgba(0, 255, 255, 0.477) 3em);
+  background-color: rgba(0, 255, 255, 0.471);
+  scrollbar-width: none;
+
+  width: 20rem;
+  padding: 1rem 4rem 1rem 1rem;
+  color: rgba(0, 21, 255, 0.877);
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+
+.cat-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.cat-card {
+  display: flex;
+  width: 45%;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+.title {
+  font-size: 2em;
+}
+.text {
+  font-size: 1em;
+  margin-top: 20px;
+}
+.bold {
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+/* =================================================
+===========(beauti loader)==========
+=================================================*/
+.loader {
+  width: calc(150px - 14px);
+  height: 100px;
+  position: absolute;
+  top: 20%;
+  left: 45%;
+  animation: flippx 1s infinite linear;
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ff3d00;
+  transform-origin: -14px 50%;
+  animation: spin 0.5s infinite linear;
+}
+@keyframes flippx {
+  0%,
+  49% {
+    transform: scaleX(1);
+  }
+  50%,
+  100% {
+    transform: scaleX(-1);
+  }
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
