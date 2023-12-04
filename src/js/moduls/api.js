@@ -5,11 +5,13 @@ const baseUrl = 'https://pixabay.com/api/';
 =============Class for work with API Servises
 ========================================================*/
 export default class ApiServise {
-  constructor() {}
+  constructor() {
+    page: 1;
+  }
 
   async getFirstPage(value) {
     const resolve = await fetch(
-      `${baseUrl}?key=${key}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=1`
+      `${baseUrl}?key=${key}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${this.page}`
     );
     return await resolve.json();
   }
