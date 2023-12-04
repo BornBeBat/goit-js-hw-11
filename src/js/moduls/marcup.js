@@ -4,21 +4,32 @@
 export default class Marcup {
   constructor() {}
 
-  createMarcupOneRow({ name, id }) {
-    return `<option data-value="${id}">${name}</option>`;
+  createSetMarcup(data) {
+    return data.map(cur => this.createCardMarcup(cur)).join('');
   }
 
-  createMarcupSelect(data) {
-    return data.map(cur => this.createMarcupOneRow(cur)).join();
-  }
-
-  createMarcupForDiv(url, { description, temperament, name }) {
-    return ` <img src="${url}" alt="cat" width="400" />
-      <div class="cat-card">
-        <h1 class="title">${name}</h1>
-        <p class="text">${description}</p>
-        <p class="text">
-          <b class="bold">Temperament: </b>${temperament}</p>
+  createCardMarcup({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) {
+    return `<div class="photo-card">
+        <a href="${largeImageURL}"
+          ><img
+            src="${webformatURL}"
+            alt="${tags}"
+            loading="lazy"
+        /></a>
+        <div class="info">
+          <p class="info-item">
+            <b>Likes: ${likes}</b>
+          </p>
+          <p class="info-item">
+            <b>Views: ${views}</b>
+          </p>
+          <p class="info-item">
+            <b>Comments: ${comments}</b>
+          </p>
+          <p class="info-item">
+            <b>Downloads: ${downloads}</b>
+          </p>
+        </div>
       </div>`;
   }
 }
