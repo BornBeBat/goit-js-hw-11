@@ -6,18 +6,24 @@ const baseUrl = 'https://pixabay.com/api/';
 ========================================================*/
 export default class ApiServise {
   constructor() {
-    page: 1;
+    page: null;
+    queryValue: null;
   }
 
   async getFirstPage(value) {
+    this.queryValue = value;
+    this.page = 1;
     const resolve = await fetch(
-      `${baseUrl}?key=${key}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${this.page}`
+      `${baseUrl}?key=${key}&q=${this.queryValue}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${this.page}`
     );
     return await resolve.json();
   }
 
-  async fetchCatByBreed(breedId) {
-    const resolve = await fetch(`${baseUrl}/images/search?breed_ids=${breedId}`, options);
+  async getNextPage() {
+    this.page += 1;
+    const resolve = await fetch(
+      `${baseUrl}?key=${key}&q=${this.queryValue}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${this.page}`
+    );
     return await resolve.json();
   }
 }

@@ -7,10 +7,6 @@ img {
   width: 100%;
   height: auto;
 }
-.container {
-  max-width: 90%;
-  margin: 0 auto;
-}
 
 .visually-hidden {
   position: absolute;
@@ -43,6 +39,9 @@ button {
   border: none;
   outline: none;
   border-radius: 3px;
+  background: #01d5e6;
+  cursor: pointer;
+  transition: background ease-in-out 350ms;
 }
 input {
   width: 100%;
@@ -52,17 +51,14 @@ input {
   font-size: large;
   padding-left: 15px;
 }
-button {
+.form-btm {
   height: 36px;
   width: 36px;
   position: absolute;
   top: 8px;
   right: -10px;
-  background: #01d5e6;
-  cursor: pointer;
-  transition: background ease-in-out 500ms;
 }
-button:before {
+.form-btm:before {
   position: absolute;
   left: 5;
   top: 0;
@@ -70,13 +66,14 @@ button:before {
   font-size: 26px;
   color: white;
   font-weight: bold;
-  transition: color ease-in-out 500ms;
+  transition: color ease-in-out 350ms;
 }
 button:hover {
   background: #90f6fe;
   box-shadow: 2px 3px 10px 0px#90f6fe;
+  color: #01a2af;
 }
-button:hover::before {
+.form-btm:hover::before {
   color: #01a2af;
 }
 
@@ -87,9 +84,21 @@ button:hover::before {
   padding: 12px;
 }
 .photo-card {
-  width: calc((100% - 48px) / 3);
+  width: calc((100% - 72px) / 4);
   outline: 1px solid teal;
+  background-color: #e7ffff;
+  transition: transform ease-in-out 400ms;
 }
 .info {
   padding: 0 26px;
+}
+.load-more {
+  display: block;
+  height: 36px;
+  width: 126px;
+  margin: 0 auto;
+}
+.photo-card:hover {
+  box-shadow: 6px 4px 6px #b2ffff, 2px 4px 8px #b2ffff, 3px 5px 11px #e7ffff;
+  transform: scale(1.05);
 }
