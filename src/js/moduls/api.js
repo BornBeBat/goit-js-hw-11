@@ -5,7 +5,6 @@ const axios = require('axios').default;
 export default class ApiServise {
   constructor() {
     this.page = 0;
-    this.queryValue = null;
     this.baseUrl = 'https://pixabay.com/api/';
     this.option = {
       params: {
@@ -20,15 +19,6 @@ export default class ApiServise {
     };
   }
 
-  async getFirstPage(value) {
-    this.queryValue = value;
-    this.page = 1;
-    const resolve = await fetch(
-      `${this.baseUrl}?key=${this.option.params.key}&q=${this.queryValue}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${this.page}`
-    );
-    return await resolve.json();
-  }
-
   async getFirstPageAxios(value) {
     this.option.params.q = value;
     this.option.params.page = 1;
@@ -36,13 +26,6 @@ export default class ApiServise {
     return resolve.data;
   }
 
-  async getNextPage() {
-    this.page += 1;
-    const resolve = await fetch(
-      `${this.baseUrl}?key=${this.option.params.key}&q=${this.queryValue}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${this.page}`
-    );
-    return await resolve.json();
-  }
   async getNextPageAxios() {
     this.option.params.page += 1;
     const resolve = await axios.get(this.baseUrl, this.option);

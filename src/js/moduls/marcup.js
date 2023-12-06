@@ -1,15 +1,21 @@
 /* =====================================================
 =============Class for work with marcup
 ========================================================*/
-export default class Marcup {
-  constructor() {}
 
-  createSetMarcup(data) {
-    return data.map(cur => this.createCardMarcup(cur)).join('');
-  }
+function createSetMarcup(data) {
+  return data.map(cur => createCardMarcup(cur)).join('');
+}
 
-  createCardMarcup({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) {
-    return `<div class="photo-card">
+function createCardMarcup({
+  webformatURL,
+  largeImageURL,
+  tags,
+  likes,
+  views,
+  comments,
+  downloads,
+}) {
+  return `<div class="photo-card">
         <a href="${largeImageURL}"
           ><img
             src="${webformatURL}"
@@ -31,5 +37,5 @@ export default class Marcup {
           </p>
         </div>
       </div>`;
-  }
 }
+export { createSetMarcup };
