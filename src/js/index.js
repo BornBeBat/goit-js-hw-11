@@ -24,7 +24,7 @@ async function onSubmit(event) {
 
   const query = event.target.elements.searchQuery;
   try {
-    const page = await api.getFirstPage(query.value);
+    const page = await api.getFirstPageAxios(query.value);
     if (page.total === 0) throw new Error();
     refs.galery.innerHTML = '';
     onResolve(page);
@@ -43,7 +43,7 @@ async function onMoreClick(event) {
     return;
   }
   try {
-    const page = await api.getNextPage();
+    const page = await api.getNextPageAxios();
     onResolve(page);
     scrollDown();
   } catch {
