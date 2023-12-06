@@ -1,13 +1,17 @@
 body {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 16px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: italic;
 }
 img {
   display: block;
   width: 100%;
   height: auto;
 }
-
+p {
+  margin: 4px;
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -26,7 +30,7 @@ img {
   max-width: 100%;
   margin: 0 auto;
   padding-bottom: 10px;
-  border-bottom: 5px solid aqua;
+  border-bottom: 3px solid #1ed0d0;
 }
 
 form {
@@ -39,15 +43,15 @@ button {
   border: none;
   outline: none;
   border-radius: 3px;
-  background: #01d5e6;
+  background: #b2ffff;
   cursor: pointer;
   transition: background ease-in-out 350ms;
 }
 input {
   width: 100%;
   height: 50px;
-  background: #3df0fe;
-  color: white;
+  background: #e7ffff;
+  color: #1f4f4e;
   font-size: large;
   padding-left: 15px;
 }
@@ -65,16 +69,15 @@ input {
   content: '➡';
   font-size: 26px;
   color: white;
-  font-weight: bold;
   transition: color ease-in-out 350ms;
 }
 button:hover {
-  background: #90f6fe;
-  box-shadow: 2px 3px 10px 0px#90f6fe;
-  color: #01a2af;
+  background: #91ffff;
+  box-shadow: 2px 3px 10px 0px#91ffff;
+  color: #1f4f4e;
 }
 .form-btm:hover::before {
-  color: #01a2af;
+  color: #1f4f4e;
 }
 
 .gallery {
@@ -90,7 +93,7 @@ button:hover {
   transition: transform ease-in-out 400ms;
 }
 .info {
-  padding: 0 26px;
+  padding: 0 12px;
 }
 .load-more {
   display: block;

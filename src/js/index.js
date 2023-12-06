@@ -29,7 +29,7 @@ async function onSubmit(event) {
     refs.galery.innerHTML = '';
     onResolve(page);
     addListener();
-
+    event.target.reset();
     Notify.success(`Hooray! We found ${page.totalHits} images.`);
   } catch {
     onReject();
