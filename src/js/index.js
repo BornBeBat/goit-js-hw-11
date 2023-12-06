@@ -31,6 +31,7 @@ async function onSubmit(event) {
     addListener();
     event.target.reset();
     Notify.success(`Hooray! We found ${page.totalHits} images.`);
+    onObserv();
   } catch {
     onReject();
   }
@@ -46,6 +47,7 @@ async function onMoreClick(event) {
     const page = await api.getNextPageAxios();
     onResolve(page);
     scrollDown();
+    onObserv();
   } catch {
     onReject();
   }
@@ -84,3 +86,19 @@ function scrollDown() {
     behavior: 'smooth',
   });
 }
+
+function onObserv() {
+  const target = refs.galery.lastElementChild;
+  observer.observe(target);
+}
+const observer = new IntersectionObserver(
+  ([entry], obs) => {
+    if (entry.isIntersecting) {
+      obs.unobserve(entry.target);
+      onMoreClick();
+    }
+  },
+  {
+    threshold: 1,
+  }
+);
