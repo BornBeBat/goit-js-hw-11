@@ -83,7 +83,7 @@ function scrollDown() {
       top: windowInnerHeight * 0.98,
       behavior: 'smooth',
     });
-  }, 300);
+  }, 350);
 }
 
 function changeObservTarget() {
