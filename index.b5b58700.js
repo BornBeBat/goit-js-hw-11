@@ -19,5 +19,5 @@
             <b>Downloads: ${s}</b>
           </p>
         </div>
-      </div>`})(t)).join("")),eK.refresh(),e%40===t.length){setTimeout(()=>{eG=!0,(0,eX.Notify).warning("We're sorry, but you've reached the end of search results.")},1e3);return}}function e8(){let t=eQ.galery.lastElementChild;e0.observe(t)}eQ.form.addEventListener("submit",e1)}();
-//# sourceMappingURL=index.98b2fddc.js.map
+      </div>`})(t)).join("")),eK.refresh(),e%40===t.length&&0!==t.length){setTimeout(()=>{eG=!0,(0,eX.Notify).warning("We're sorry, but you've reached the end of search results.")},1e3);return}}function e8(){let t=eQ.galery.lastElementChild;e0.observe(t)}eQ.form.addEventListener("submit",e1)}();
+//# sourceMappingURL=index.b5b58700.js.map
