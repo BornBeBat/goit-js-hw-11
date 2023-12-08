@@ -6,7 +6,9 @@ body {
 }
 img {
   display: block;
+
   width: 100%;
+
   height: auto;
 }
 p {
@@ -88,7 +90,7 @@ button:hover {
 }
 .photo-card {
   width: calc((100% - 72px) / 4);
-  min-height: 35vh;
+  min-height: 25vh;
   outline: 1px solid teal;
   background-color: #e7ffff;
   transition: transform ease-in-out 400ms;

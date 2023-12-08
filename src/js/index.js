@@ -1,7 +1,6 @@
 import ApiServise from './moduls/api.js';
 import { createSetMarcup } from './moduls/marcup.js';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import 'notiflix/dist/notiflix-3.2.6.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
@@ -67,7 +66,7 @@ async function uploadOnScroll() {
 function onResolve(hits, totalHits) {
   refs.galery.insertAdjacentHTML('beforeend', createSetMarcup(hits));
   lightboxGallery.refresh();
-  if (totalHits % 40 === hits.length) {
+  if (totalHits % 40 === hits.length && hits.length !== 0) {
     setTimeout(() => {
       endOfsearch = true;
       Notify.warning(`We're sorry, but you've reached the end of search results.`);
