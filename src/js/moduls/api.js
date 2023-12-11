@@ -24,13 +24,14 @@ export default class ApiServise {
   async getFirstPageAxios(value) {
     this.option.params.q = value;
     this.option.params.page = 1;
-    const resolve = await axios(this.option);
-    return resolve.data;
+    const response = await axios(this.option);
+    return response.data;
   }
 
   async getNextPageAxios() {
     this.option.params.page += 1;
-    const resolve = await axios(this.option);
-    return resolve.data;
+    const response = await axios(this.option);
+    return response.data;
   }
+  
 }
