@@ -45,8 +45,9 @@ async function onSubmit(event) {
     Notify.success(`Hooray! We found ${totalHits} images.`);
   } catch {
     Notify.failure('Sorry, there are no images matching your search query. Please try again.');
+  } finally {
+    refs.loader.classList.add('visually-hidden');
   }
-  refs.loader.classList.add('visually-hidden');
 }
 
 async function uploadOnScroll() {
@@ -55,12 +56,12 @@ async function uploadOnScroll() {
     const { hits, totalHits } = await api.getNextPageAxios();
     onResolve(hits, totalHits);
     scrollDown();
-
     changeObservTarget();
   } catch {
     Notify.failure('Sorry, there are no images matching your search query. Please try again.');
+  } finally {
+    refs.loader.classList.add('visually-hidden');
   }
-  refs.loader.classList.add('visually-hidden');
 }
 
 function onResolve(hits, totalHits) {
