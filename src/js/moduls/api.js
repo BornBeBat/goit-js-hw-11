@@ -25,6 +25,7 @@ export default class ApiServise {
     this.option.params.q = value;
     this.option.params.page = 1;
     const response = await axios(this.option);
+    console.log(response);
     return response.data;
   }
 
@@ -33,5 +34,4 @@ export default class ApiServise {
     const response = await axios(this.option);
     return response.data;
   }
-  
 }
